@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+# Rspec Gem For Unit Test Cases
+gem 'rspec', '3.9.0'
+gem 'rake', '~> 13.0.1'
+gem 'bundler', '2.1.0.pre.3'
