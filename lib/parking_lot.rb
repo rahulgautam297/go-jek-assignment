@@ -10,6 +10,6 @@ class ParkingLot
       slot_number = index + 1
       @slots[index] = Slot.new(slot_number)
     end
-    puts "Created a parking lot with #{size} slots"
+    puts "Created a parking lot with #{ size } slots"
   end
 end
