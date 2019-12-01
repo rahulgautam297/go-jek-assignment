@@ -5,3 +5,8 @@
 #
 # After this is run, bin/parking_lot
 # should Just Work.
+
+#!/bin/bash
+bundle Install
+rspec --init
+bundle exec rspec specs

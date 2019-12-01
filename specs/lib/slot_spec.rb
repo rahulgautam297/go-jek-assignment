@@ -1,4 +1,4 @@
-require_relative '../../lib/slots'
+require_relative '../../lib/slot'
 
 describe Slot do
   describe 'initialize' do
