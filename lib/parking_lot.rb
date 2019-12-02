@@ -12,12 +12,12 @@ class ParkingLot
       slot_number = index + 1
       slots[index] = Slot.new(slot_number)
     end
-    puts "Create a parking lot with #{ size } slots"
+    puts "Created a parking lot with #{ size } slots"
   end
 
   def park(vehicle_name, vehicle_number)
     if next_free_slot
-      puts "Allocated slot number : #{ next_free_slot.id }"
+      puts "Allocated slot number: #{ next_free_slot.id }"
       next_free_slot.park(vehicle_name, vehicle_number)
     else
       parking_lot_full_handler
@@ -35,20 +35,20 @@ class ParkingLot
   end
 
   def status
-    puts "Slot No.\t Registration Number\t Colour"
+    puts "Slot No.    Registration Number    Colour\n"
     slots.each do | slot |
-      puts "#{ slot.id }\t\t #{ slot.vehicle_number }\t\t #{ slot.vehicle_color }" unless (slot.free?)
+      puts "#{ slot.id }           #{ slot.vehicle_number }          #{ slot.vehicle_color }\n" unless (slot.free?)
     end
   end
 
   def registration_numbers_for_cars_with_colour (color)
     filtered_cars = filter_cars('vehicle_number', 'vehicle_color', color)
-    puts filtered_cars.compact.join(',')
+    puts filtered_cars.compact.join(', ')
   end
 
   def slot_numbers_for_cars_with_colour (color)
     filtered_cars = filter_cars('id', 'vehicle_color', color)
-    puts filtered_cars.compact.join(',')
+    puts filtered_cars.compact.join(', ')
   end
 
   def slot_number_for_registration_number (vehicle_number)
