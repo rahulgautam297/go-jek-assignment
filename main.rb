@@ -1,4 +1,5 @@
 require_relative './lib/parking_lot'
+require 'rspec'
 
 def process_input(input)
   latest_parking_lot = nil
@@ -36,6 +37,7 @@ def startIneractiveConsole()
 end
 
 def main
+  RSpec::Core::Runner.run([File.dirname(__FILE__) + '/specs'])
   if (ARGV.length == 0)
     startIneractiveConsole()
   else
