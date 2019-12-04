@@ -171,7 +171,7 @@ describe ParkingLot do
         parking_lot.park('car_no3', 'car_color1')
         expect do
             parking_lot.slot_number_for_registration_number('car_no5')
-        end.to output("Not Found\n").to_stdout
+        end.to output("Not found\n").to_stdout
       end
     end
 
