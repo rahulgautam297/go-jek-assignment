@@ -88,7 +88,7 @@ describe ParkingLot do
         parking_lot.park('car_no3', 'car_color1')
         expect do
             parking_lot.registration_numbers_for_cars_with_colour('car_color')
-        end.to output("car_no,car_no2\n").to_stdout
+        end.to output("car_no, car_no2\n").to_stdout
       end
     end
 
@@ -123,7 +123,7 @@ describe ParkingLot do
         parking_lot.park('car_no3', 'car_color1')
         expect do
             parking_lot.slot_numbers_for_cars_with_colour('car_color')
-        end.to output("1,3\n").to_stdout
+        end.to output("1, 3\n").to_stdout
       end
     end
 

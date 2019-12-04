@@ -14,14 +14,24 @@ def process_input(input)
   end
 end
 
+$latest_parking_lot_interactive = nil
+
+def process_input_for_interactive(input)
+  sliced_input = input.split(/\s/)
+  command = sliced_input[0]
+  if  command == 'exit'
+    exit
+  elsif  command == 'create_parking_lot'
+    no_of_slots = sliced_input[1]
+    $latest_parking_lot_interactive = ParkingLot.new(no_of_slots)
+  else
+    $latest_parking_lot_interactive.send(command, *([sliced_input[1], sliced_input[2]].compact))
+  end
+end
+
 def startIneractiveConsole()
   loop do
-    puts gets
-    if (gets.chomp == "exit")
-      return
-    else
-      process_input(gets)
-    end
+    process_input_for_interactive(gets.chomp)
   end
 end
 
