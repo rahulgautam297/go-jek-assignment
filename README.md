@@ -36,3 +36,17 @@ Local tests can be run by *rspec specs/lib*
 
 * **Rahul Gautam** - (https://github.com/rahulgautam297)
 
+
+## Issues:
+  Fix these and then submit.
+
+-Edge cases has not been handled
+* Any invalid input results in program exiting with error.
+* Running any command before create_parking_lot command results in error.
+* Same car can be parked multiple times
+ 
+- Test case for core logic, like parking to nearest available slot not present.
+
+- I/O logic is part of the entity class itself where method prints result. It could have been extracted out and made part of I/O class.
+
+- process_input and process_input_for_interactive could have been simplified to extract out common logic.
